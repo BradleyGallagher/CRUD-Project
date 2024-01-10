@@ -1,0 +1,71 @@
+.App{
+    height:100vh;
+    padding: 0px;
+display:flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.paints{
+    display: flex;
+    gap: 10px;
+}
+
+.paint{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    background-color: aqua;
+}
+
+.delete{
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid rgb(245, 191, 191);
+    color: rgb(242, 100, 100);
+
+}
+
+.update{
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid rgb(11, 58, 229);
+    color: rgb(12, 12, 234);
+
+}
+
+.form {
+
+display:flex;
+flex-direction: column;
+gap:10px
+}
+
+input{
+    width: 250px;
+    padding: 10px;
+    border: 2px solid gray
+
+}
+
+.formButton{
+    border:none;
+    padding: 10px;
+    background-color: lightcoral;
+    color: bisque;
+    font-weight: bold;
+    cursor: pointer;
+}
