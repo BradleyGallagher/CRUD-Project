@@ -5,13 +5,17 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Paints = () => {
+  //Setting the initial state of paint to be empty, this will be updated on the call of setPaint
   const [paints, setPaints] = useState([]);
 
+  //Reloads the called component (Paints) when the axios API request has been complete which fetches all data.
   useEffect(() => {
     const fetchAllPaints = async () => {
       try {
-        const response = await axios.get("http://localhost:8800/paints");
+        //Allows to make any API request using a React App
         // Axios is a method used for the frontend to interact with the backend via an api call
+        const response = await axios.get("http://localhost:8800/paints");
+        // Allows the state of the useState to change so that the data thqat has been retrieved is injected to this component
         setPaints(response.data);
       } catch (err) {
         console.log(err);
@@ -37,6 +41,7 @@ const Paints = () => {
       <div className="paints">
         {paints.map((paint) => (
           <div className="paint" key={paint.id}>
+            {/* If there is a paint cover picture show the image with source paint.cover */}
             {paint.cover && <img src={paint.cover} alt="" />}
             <h2>{paint.title}</h2>
             <p>{paint.description}</p>

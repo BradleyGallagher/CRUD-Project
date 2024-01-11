@@ -6,7 +6,9 @@ import "./style.css"
 
 function App() {
   return (
+    // eslint-disable-next-line react/jsx-no-comment-textnodes
     <div className="App">
+       
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Paints />} />

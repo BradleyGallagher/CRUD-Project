@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Add() {
+  //Setting the initial state of paint to be empty, this will be updated on the call of setPaint
   const [paint, setPaint] = useState({
     title: "",
     description: "",
@@ -12,14 +13,15 @@ export default function Add() {
   });
 
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setPaint((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleClick = async (e) => {
+    // Prevent default makes sure that the buttons defualt behaviour doest happen and then we define what it should do below.
     e.preventDefault();
     try {
+      //Allows to make any API request using a React App
       await axios.post("http://localhost:8800/paints", paint);
       navigate("/");
     } catch (err) {

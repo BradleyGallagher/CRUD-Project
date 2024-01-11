@@ -4,6 +4,7 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Update() {
+  //Setting the initial state of paint to be empty, this will be updated on the call of setPaint
   const [paint, setPaint] = useState({
     title: "",
     description: "",
@@ -22,6 +23,7 @@ export default function Update() {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
+      //Allows to make any API request using a React App
       await axios.put("http://localhost:8800/paints/"+ paintId, paint);
       navigate("/");
     } catch (err) {
